@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars!</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <!-- Craigslist Listings -->
+    <div class="row" id="mars_data">
+      <div class="col-md-12">
+        <strong><h2 style="font-weight: bold;">Latest Mars News</h2></strong>
+        <h2 class="heading">{{Mars.news1}}</h2>
+        <h3 class="heading">{{Mars.news2}}</h3>
+        </br>
+      
+      <div class="row">
+        <div class="col-md-8" style="font-weight: bold;" >
+          <strong><h1 style="font-weight: bold;"> Featured Mars Image</h1></strong>
+          <img src={{Mars.full_image}} alt="Featured Mars Image" style="width:80%;height:80%;">
+          </br>
+          </br>
+        </div>   
+
+        <div class="col-md-4" >
+          <div class="row">
+            <strong><h2 style="font-weight: bold;">Mars Weather</h2></strong>
+            <p style="color:black;font-size:20px;width:100%"> src={{Mars.weather}}</p>
+          </div>
+          
+           <div class="row">
+            <strong><h2 style="font-weight: bold;">Mars Facts</h2></strong>
+              <div>
+                {{ Mars.data|safe}}
+              </div> 
+              <br/>
+              <br/> 
+          </div>
+        </div>
+
+        <div class="row">
+          <h2 style="font-weight: bold;">Mars Hemisphere!</h2>
+          <div class="col-md-6" style="border:thick" >
+            <img src={{Mars.image1}} style="width:100%;height:100%;">
+            <strong><h2 class="heading">{{Mars.image1_name}}</h2></strong>
+          </div>   
+      
+          <div class="col-md-6" style="border:thick">
+            <img src={{Mars.image2}} alt="schiaparelli" style="width:100%;height:100%;">
+            <strong><h2 class="heading">{{Mars.image2_name}}</h2></strong>
+          </div>
+        </div> 
+        <br/>
+        <div class="row">
+          <div class="col-md-6" style="border:thick">
+            <img src={{Mars.image3}} alt="syrtis_major" style="width:100%;height:100%;">
+            <strong><h2 class="heading">{{Mars.image3_name}}</h2></strong>
+          </div> 
+          <div class="col-md-6" style="border:thick">
+            <img src={{Mars.image2}} alt="valles_marineris" style="width:100%;height:100%;">
+            <strong><h2 class="heading">{{Mars.image4_name}}</h2></strong>
+          </div>
+        </div>  
+        <br/>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
+
